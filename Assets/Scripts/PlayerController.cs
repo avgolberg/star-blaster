@@ -34,8 +34,8 @@ public class PlayerController : MonoBehaviour
     {
         moveVector = moveAction.ReadValue<Vector2>();
         newPosition = transform.position + moveVector * moveSpeed * Time.deltaTime;
-        newPosition.x = Math.Clamp(newPosition.x, minBounds.x + leftBoundPadding, maxBounds.x - rightBoundPadding);
-        newPosition.y = Math.Clamp(newPosition.y, minBounds.y + bottomBoundPadding, maxBounds.y - upBoundPadding);
+        newPosition.x = Mathf.Clamp(newPosition.x, minBounds.x + leftBoundPadding, maxBounds.x - rightBoundPadding);
+        newPosition.y = Mathf.Clamp(newPosition.y, minBounds.y + bottomBoundPadding, maxBounds.y - upBoundPadding);
         transform.position = newPosition;
     }
 }
