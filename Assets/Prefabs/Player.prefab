@@ -131,6 +131,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health
   health: 50
   hitParticles: {fileID: 2673410675893140656, guid: d994e8eec6313014aa1eb0936af33be0, type: 3}
+  isPlayer: 1
+  scoreValue: 50
   applyCameraShake: 1
 --- !u!114 &8095979094967053526
 MonoBehaviour:
