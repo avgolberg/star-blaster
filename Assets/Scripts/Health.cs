@@ -19,6 +19,11 @@ public class Health : MonoBehaviour
         scoreKeeper = FindFirstObjectByType<ScoreKeeper>();
         cameraShake = Camera.main.GetComponent<CameraShake>();
     }
+    public int GetHealth()
+    {
+        return health;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         DamageDealer damageDealer = other.GetComponent<DamageDealer>();
