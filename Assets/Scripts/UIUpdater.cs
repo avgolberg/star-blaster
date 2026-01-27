@@ -1,6 +1,5 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class UIUpdater : MonoBehaviour
@@ -18,8 +17,6 @@ public class UIUpdater : MonoBehaviour
         scoreKeeper = FindFirstObjectByType<ScoreKeeper>();
         healthSlider.maxValue = playerHealth.GetHealth();
     }
-
-
     void Update()
     {
         scoreText.text = scoreKeeper.GetScore().ToString("000000000");

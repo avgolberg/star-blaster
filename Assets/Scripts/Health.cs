@@ -12,11 +12,13 @@ public class Health : MonoBehaviour
     [SerializeField] bool applyCameraShake;
     CameraShake cameraShake;
     AudioManager audioManager;
+    LevelManager levelManager;
 
     void Start()
     {
         audioManager = FindFirstObjectByType<AudioManager>();
         scoreKeeper = FindFirstObjectByType<ScoreKeeper>();
+        levelManager = FindFirstObjectByType<LevelManager>();
         cameraShake = Camera.main.GetComponent<CameraShake>();
     }
     public int GetHealth()
@@ -52,11 +54,15 @@ public class Health : MonoBehaviour
 
     void Die()
     {
-         if (!isPlayer)
-            {
-                scoreKeeper.ModifyScore(scoreValue);    
-            }            
-            Destroy(gameObject);
+        if (isPlayer)
+        {
+            levelManager.LoadGameOver();
+        }
+        else
+        {
+            scoreKeeper.ModifyScore(scoreValue);
+        }          
+        Destroy(gameObject);
     }
 
     void PlayHitParticles()
