@@ -15,6 +15,7 @@ public class CameraShake : MonoBehaviour
 
     public void Play()
     {
+        if (!isEnabled) return;
         StartCoroutine(ShakeCamera());
     }
 
@@ -28,5 +29,14 @@ public class CameraShake : MonoBehaviour
         }
         transform.position = initialPosition;
         timeElapsed = 0f;
+    }
+
+    private bool isEnabled = true;
+
+    public void ApplyConfig(bool enableShake, float duration, float magnitude)
+    {
+        isEnabled = enableShake;
+        shakeDuration = duration;
+        shakeMagnitde = magnitude;
     }
 }

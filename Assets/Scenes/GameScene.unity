@@ -425,6 +425,81 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &267818088
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 267818090}
+  - component: {fileID: 267818089}
+  m_Layer: 0
+  m_Name: ConfigApplier_Game
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &267818089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267818088}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dda9387cd503f8c4d9e36736a362911e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StarBlasterConfigApplier
+  configLoader: {fileID: 0}
+  backgroundRenderer: {fileID: 6326051614654604768}
+  backgroundTopLayerRenderer: {fileID: 6326051614654604767}
+  playerRenderer: {fileID: 2875903043783548753}
+  basicEnemyRenderer: {fileID: 0}
+  fastEnemyRenderer: {fileID: 0}
+  tankEnemyRenderer: {fileID: 0}
+  playerProjectileRenderer: {fileID: 0}
+  enemyProjectileRenderer: {fileID: 0}
+  playerController: {fileID: 2875903043783548752}
+  playerShooter: {fileID: 2875903043783548751}
+  playerProjectileDamage: {fileID: 0}
+  baseBackgroundScroller: {fileID: 0}
+  topBackgroundScroller: {fileID: 0}
+  cameraShake: {fileID: 519420033}
+  audioManager: {fileID: 1551232215065023837}
+  titleText: {fileID: 0}
+  subtitleText: {fileID: 0}
+  scoreLabelText: {fileID: 1988316184}
+  healthLabelText: {fileID: 0}
+  gameOverTitleText: {fileID: 0}
+  gameOverSubtitleText: {fileID: 0}
+  finalScoreLabelText: {fileID: 0}
+  startButtonText: {fileID: 0}
+  playAgainButtonText: {fileID: 0}
+  mainMenuButtonText: {fileID: 0}
+  primaryColorImages: []
+  buttonColorImages: []
+  uiTextElements:
+  - {fileID: 1988316184}
+  healthSlider: {fileID: 494367693}
+--- !u!4 &267818090
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267818088}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &494367691
 GameObject:
   m_ObjectHideFlags: 0
@@ -1242,6 +1317,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f3b5edaa8e15454da72d5bc4d76225c, type: 3}
+--- !u!114 &1551232215065023837 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6457507494882205729, guid: 8f3b5edaa8e15454da72d5bc4d76225c, type: 3}
+  m_PrefabInstance: {fileID: 1551232215065023836}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91be67c78ad5ad348901ccc08b5d1611, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
 --- !u!1001 &1696947590923101154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1360,6 +1446,33 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c1e8de1565d32d841b6e2b3eab62375f, type: 3}
+--- !u!114 &2875903043783548751 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8095979094967053526, guid: c1e8de1565d32d841b6e2b3eab62375f, type: 3}
+  m_PrefabInstance: {fileID: 2875903043783548750}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 757753a4f1376af438ded6c7c7dea7ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Shooter
+--- !u!114 &2875903043783548752 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5732926588850926624, guid: c1e8de1565d32d841b6e2b3eab62375f, type: 3}
+  m_PrefabInstance: {fileID: 2875903043783548750}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b70b86f77a38774e8bd5d196ab0ea72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+--- !u!212 &2875903043783548753 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7049135757264608616, guid: c1e8de1565d32d841b6e2b3eab62375f, type: 3}
+  m_PrefabInstance: {fileID: 2875903043783548750}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6326051614654604765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1408,15 +1521,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1869280744079001298, guid: 0990c291c18b9794283927392774cf49, type: 3}
+      propertyPath: m_TagString
+      value: BackgroundBase
+      objectReference: {fileID: 0}
     - target: {fileID: 5308436772400226293, guid: 0990c291c18b9794283927392774cf49, type: 3}
       propertyPath: m_Name
       value: Backgrounds
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357672020622149501, guid: 0990c291c18b9794283927392774cf49, type: 3}
+      propertyPath: m_TagString
+      value: BackgroundTop
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0990c291c18b9794283927392774cf49, type: 3}
+--- !u!212 &6326051614654604767 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8038983641871646695, guid: 0990c291c18b9794283927392774cf49, type: 3}
+  m_PrefabInstance: {fileID: 6326051614654604765}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &6326051614654604768 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6329160246363805067, guid: 0990c291c18b9794283927392774cf49, type: 3}
+  m_PrefabInstance: {fileID: 6326051614654604765}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1430,3 +1561,4 @@ SceneRoots:
   - {fileID: 191934315}
   - {fileID: 658698564}
   - {fileID: 621667456}
+  - {fileID: 267818090}

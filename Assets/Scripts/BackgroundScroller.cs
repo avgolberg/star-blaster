@@ -17,4 +17,9 @@ public class BackgroundScroller : MonoBehaviour
         offset += moveSpeed * Time.deltaTime;
         material.mainTextureOffset = offset;
     }
+
+    public void ApplyConfig(float scrollSpeedY)
+    {
+        moveSpeed = new Vector2(0f, scrollSpeedY);
+    }
 }

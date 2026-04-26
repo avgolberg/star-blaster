@@ -16,7 +16,7 @@ public class Shooter : MonoBehaviour
 
 
     [HideInInspector] public bool isFiring;
-    
+
     Coroutine fireCoroutine;
     AudioManager audioManager;
 
@@ -67,5 +67,12 @@ public class Shooter : MonoBehaviour
 
             yield return new WaitForSecondsRealtime(waitTime);
         }
+    }
+    
+    public void ApplyConfig(float newProjectileSpeed, float newProjectileLifetime, float newBaseFireRate)
+    {
+        projectileSpeed = newProjectileSpeed;
+        projectileLifetime = newProjectileLifetime;
+        baseFireRate = newBaseFireRate;
     }
 }

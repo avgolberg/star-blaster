@@ -55,4 +55,9 @@ public class PlayerController : MonoBehaviour
     {
         playerShooter.isFiring = fireAction.IsPressed();
     }
+
+    public void ApplyConfig(float newMoveSpeed)
+    {
+        moveSpeed = newMoveSpeed;
+    }
 }

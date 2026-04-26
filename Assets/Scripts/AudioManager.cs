@@ -45,4 +45,13 @@ public class AudioManager : MonoBehaviour
             AudioSource.PlayClipAtPoint(clip, Camera.main.transform.position, volume);
         }
     }
+
+    public void ApplyConfig(AudioClip newShootingClip, AudioClip newDamageClip)
+    {
+        if (newShootingClip != null)
+            shootingClip = newShootingClip;
+
+        if (newDamageClip != null)
+            damageClip = newDamageClip;
+    }
 }

@@ -1,0 +1,42 @@
+{
+  "starBlasterOptions": {
+    "difficultyPreset": "medium",
+    "texts": {
+      "title": "PIZZA BLASTER",
+      "subtitle": "PROTECT THE PIZZA",
+      "startButton": "PLAY",
+      "quitButton": "EXIT",
+      "scoreLabel": "SCORE",
+      "healthLabel": "HP",
+      "gameOverTitle": "GAME OVER",
+      "gameOverSubtitle": "TRY AGAIN",
+      "finalScoreLabel": "FINAL SCORE",
+      "playAgainButton": "PLAY AGAIN",
+      "mainMenuButton": "MENU"
+    },
+    "colors": {
+      "primaryColor": "#A855F7",
+      "secondaryColor": "#111827",
+      "buttonColor": "#E9C8FF",
+      "buttonTextColor": "#6B46C1",
+      "uiTextColor": "#FFFFFF",
+      "healthBarColor": "#22C55E"
+    },
+    "background": {
+      "background": {
+	  "baseScrollSpeedY": 0.15,
+	  "topScrollSpeedY": 0.45
+	  }
+    },
+    "gameplay": {
+      "player": {
+        "health": 80,
+        "moveSpeed": 14,
+        "fireRate": 0.12,
+        "damage": 20,
+        "projectileSpeed": 14,
+        "projectileLifetime": 4
+      }
+    }
+  }
+}
