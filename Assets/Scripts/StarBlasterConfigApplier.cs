@@ -12,37 +12,28 @@ public class StarBlasterConfigApplier : MonoBehaviour
     [Header("Sprites")]
     [SerializeField] private SpriteRenderer backgroundRenderer;
     [SerializeField] private SpriteRenderer backgroundTopLayerRenderer;
-    [SerializeField] private SpriteRenderer playerRenderer;
-    [SerializeField] private SpriteRenderer basicEnemyRenderer;
-    [SerializeField] private SpriteRenderer fastEnemyRenderer;
-    [SerializeField] private SpriteRenderer tankEnemyRenderer;
-    [SerializeField] private SpriteRenderer playerProjectileRenderer;
-    [SerializeField] private SpriteRenderer enemyProjectileRenderer;
 
     [Header("Gameplay Components")]
     [SerializeField] private PlayerController playerController;
     [SerializeField] private Shooter playerShooter;
-    [SerializeField] private DamageDealer playerProjectileDamage;
     [SerializeField] private CameraShake cameraShake;
     [SerializeField] private AudioManager audioManager;
 
-    [Header("UI")]
+    [Header("UI Texts")]
     [SerializeField] private TextMeshProUGUI titleText;
     [SerializeField] private TextMeshProUGUI subtitleText;
     [SerializeField] private TextMeshProUGUI scoreLabelText;
-    [SerializeField] private TextMeshProUGUI healthLabelText;
+
     [SerializeField] private TextMeshProUGUI gameOverTitleText;
     [SerializeField] private TextMeshProUGUI gameOverSubtitleText;
     [SerializeField] private TextMeshProUGUI finalScoreLabelText;
-    [SerializeField] private TextMeshProUGUI startButtonText;
-    [SerializeField] private TextMeshProUGUI playAgainButtonText;
-    [SerializeField] private TextMeshProUGUI mainMenuButtonText;
 
-    [Header("UI Colors")]
-    [SerializeField] private Image[] primaryColorImages;
-    [SerializeField] private Image[] buttonColorImages;
-    [SerializeField] private TextMeshProUGUI[] uiTextElements;
+    [Header("Buttons")]
+    [SerializeField] private Button[] buttons;
+
+    [Header("Health")]
     [SerializeField] private Slider healthSlider;
+
 
     private StarBlasterOptions options;
 
@@ -106,13 +97,32 @@ public class StarBlasterConfigApplier : MonoBehaviour
         SetText(titleText, texts.title);
         SetText(subtitleText, texts.subtitle);
         SetText(scoreLabelText, texts.scoreLabel);
-        SetText(healthLabelText, texts.healthLabel);
         SetText(gameOverTitleText, texts.gameOverTitle);
         SetText(gameOverSubtitleText, texts.gameOverSubtitle);
-        SetText(finalScoreLabelText, texts.finalScoreLabel);
-        SetText(startButtonText, texts.startButton);
-        SetText(playAgainButtonText, texts.playAgainButton);
-        SetText(mainMenuButtonText, texts.mainMenuButton);
+
+        SetButtonText("Start", texts.startButton);
+        SetButtonText("Quit", texts.quitButton);
+        SetButtonText("PlayAgain", texts.playAgainButton);
+        SetButtonText("MainMenu", texts.mainMenuButton);
+    }
+
+    private void SetButtonText(string buttonNamePart, string value)
+    {
+        if (buttons == null || string.IsNullOrWhiteSpace(value))
+            return;
+
+        foreach (Button button in buttons)
+        {
+            if (button == null)
+                continue;
+
+            if (!button.name.Contains(buttonNamePart, System.StringComparison.OrdinalIgnoreCase))
+                continue;
+
+            TextMeshProUGUI buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
+            if (buttonText != null)
+                buttonText.text = value;
+        }
     }
 
     private void ApplyColors()
@@ -121,20 +131,50 @@ public class StarBlasterConfigApplier : MonoBehaviour
 
         if (TryParseColor(colors.primaryColor, out Color primary))
         {
-            foreach (Image image in primaryColorImages)
-                if (image != null) image.color = primary;
+            if (titleText != null) titleText.color = primary;
+            if (gameOverTitleText != null) gameOverTitleText.color = primary;
         }
 
-        if (TryParseColor(colors.buttonColor, out Color button))
+        if (TryParseColor(colors.secondaryColor, out Color secondary))
         {
-            foreach (Image image in buttonColorImages)
-                if (image != null) image.color = button;
+            if (subtitleText != null) subtitleText.color = secondary;
+            if (gameOverSubtitleText != null) gameOverSubtitleText.color = secondary;
         }
 
-        if (TryParseColor(colors.uiTextColor, out Color textColor))
+        if (TryParseColor(colors.uiTextColor, out Color uiTextColor))
         {
-            foreach (TextMeshProUGUI text in uiTextElements)
-                if (text != null) text.color = textColor;
+            if (scoreLabelText != null) scoreLabelText.color = uiTextColor;
+            if (finalScoreLabelText != null) finalScoreLabelText.color = uiTextColor;
+        }
+
+        if (TryParseColor(colors.buttonColor, out Color buttonColor))
+        {
+            if (buttons != null)
+            {
+                 foreach (Button button in buttons)
+                {
+                    if (button == null) continue;
+
+                    Image buttonImage = button.GetComponent<Image>();
+                    if (buttonImage != null)
+                        buttonImage.color = buttonColor;
+                }
+            }
+        }
+
+        if (TryParseColor(colors.buttonTextColor, out Color buttonTextColor))
+        {
+            if (buttons != null)
+            {
+                foreach (Button button in buttons)
+                {
+                    if (button == null) continue;
+
+                    TextMeshProUGUI buttonText = button.GetComponentInChildren<TextMeshProUGUI>();
+                    if (buttonText != null)
+                        buttonText.color = buttonTextColor;
+                }
+            }
         }
 
         if (healthSlider != null && TryParseColor(colors.healthBarColor, out Color healthColor))
@@ -149,25 +189,25 @@ public class StarBlasterConfigApplier : MonoBehaviour
     }
 
     private void ApplyBackground()
-{
-    BackgroundScroller[] scrollers = FindObjectsByType<BackgroundScroller>(FindObjectsSortMode.None);
-
-    foreach (var scroller in scrollers)
     {
-        if (scroller.CompareTag("BackgroundBase"))
+        BackgroundScroller[] scrollers = FindObjectsByType<BackgroundScroller>(FindObjectsSortMode.None);
+
+        foreach (var scroller in scrollers)
         {
-            scroller.ApplyConfig(
-                options.background.baseScrollSpeedY
-            );
-        }
-        else if (scroller.CompareTag("BackgroundTop"))
-        {
-            scroller.ApplyConfig(
-                options.background.topScrollSpeedY
-            );
+            if (scroller.CompareTag("BackgroundBase"))
+            {
+                scroller.ApplyConfig(
+                    options.background.baseScrollSpeedY
+                );
+            }
+            else if (scroller.CompareTag("BackgroundTop"))
+            {
+                scroller.ApplyConfig(
+                    options.background.topScrollSpeedY
+                );
+            }
         }
     }
-}
 
     private void ApplyGameplay()
     {
@@ -184,9 +224,6 @@ public class StarBlasterConfigApplier : MonoBehaviour
                 gameplay.player.fireRate
             );
         }
-
-        if (playerProjectileDamage != null)
-            playerProjectileDamage.ApplyConfig(gameplay.player.damage);
     }
 
     private void ApplyEffects()
@@ -207,14 +244,6 @@ public class StarBlasterConfigApplier : MonoBehaviour
 
         yield return LoadSpriteToRenderer(images.backgroundImage, backgroundRenderer);
         yield return LoadSpriteToRenderer(images.backgroundTopLayerImage, backgroundTopLayerRenderer);
-        yield return LoadSpriteToRenderer(images.playerImage, playerRenderer);
-
-        yield return LoadSpriteToRenderer(images.basicEnemyImage, basicEnemyRenderer);
-        yield return LoadSpriteToRenderer(images.fastEnemyImage, fastEnemyRenderer);
-        yield return LoadSpriteToRenderer(images.tankEnemyImage, tankEnemyRenderer);
-
-        yield return LoadSpriteToRenderer(images.playerProjectileImage, playerProjectileRenderer);
-        yield return LoadSpriteToRenderer(images.enemyProjectileImage, enemyProjectileRenderer);
     }
 
     private IEnumerator ApplySounds()

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3725925435235885493}
   - component: {fileID: 12606366222643716}
   - component: {fileID: 5052979732871927156}
+  - component: {fileID: -8179688848282342939}
   m_Layer: 6
   m_Name: Player Projectile
   m_TagString: Untagged
@@ -112,6 +113,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageDealer
   damage: 25
+--- !u!114 &-8179688848282342939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7082927756437140991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbeae683cf0c4d84da6a9dc6e3afd37f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RuntimeSpriteApplier
+  spriteType: 4
 --- !u!1 &8472829817427680951
 GameObject:
   m_ObjectHideFlags: 0

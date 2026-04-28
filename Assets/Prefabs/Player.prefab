@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -5504305637816895757}
   - component: {fileID: 4372036687051909827}
   - component: {fileID: 8095979094967053526}
+  - component: {fileID: -2574848589652004617}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -154,6 +155,19 @@ MonoBehaviour:
   minimumFireRate: 0.2
   fireRateVarience: 0
   isFiring: 0
+--- !u!114 &-2574848589652004617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187439740778172290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbeae683cf0c4d84da6a9dc6e3afd37f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RuntimeSpriteApplier
+  spriteType: 0
 --- !u!1 &4474968808525574130
 GameObject:
   m_ObjectHideFlags: 0

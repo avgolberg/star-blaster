@@ -325,7 +325,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -455,35 +455,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StarBlasterConfigApplier
   configLoader: {fileID: 0}
-  backgroundRenderer: {fileID: 6326051614654604768}
-  backgroundTopLayerRenderer: {fileID: 6326051614654604767}
-  playerRenderer: {fileID: 2875903043783548753}
-  basicEnemyRenderer: {fileID: 0}
-  fastEnemyRenderer: {fileID: 0}
-  tankEnemyRenderer: {fileID: 0}
-  playerProjectileRenderer: {fileID: 0}
-  enemyProjectileRenderer: {fileID: 0}
+  backgroundRenderer: {fileID: 0}
+  backgroundTopLayerRenderer: {fileID: 0}
   playerController: {fileID: 2875903043783548752}
   playerShooter: {fileID: 2875903043783548751}
-  playerProjectileDamage: {fileID: 0}
-  baseBackgroundScroller: {fileID: 0}
-  topBackgroundScroller: {fileID: 0}
   cameraShake: {fileID: 519420033}
   audioManager: {fileID: 1551232215065023837}
   titleText: {fileID: 0}
   subtitleText: {fileID: 0}
-  scoreLabelText: {fileID: 1988316184}
-  healthLabelText: {fileID: 0}
+  healthLabelText: {fileID: 1988316184}
+  scoreLabelText: {fileID: 0}
   gameOverTitleText: {fileID: 0}
   gameOverSubtitleText: {fileID: 0}
   finalScoreLabelText: {fileID: 0}
-  startButtonText: {fileID: 0}
-  playAgainButtonText: {fileID: 0}
-  mainMenuButtonText: {fileID: 0}
-  primaryColorImages: []
-  buttonColorImages: []
-  uiTextElements:
-  - {fileID: 1988316184}
+  buttons: []
   healthSlider: {fileID: 494367693}
 --- !u!4 &267818090
 Transform:
@@ -1468,11 +1453,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b70b86f77a38774e8bd5d196ab0ea72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
---- !u!212 &2875903043783548753 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 7049135757264608616, guid: c1e8de1565d32d841b6e2b3eab62375f, type: 3}
-  m_PrefabInstance: {fileID: 2875903043783548750}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6326051614654604765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1538,16 +1518,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0990c291c18b9794283927392774cf49, type: 3}
---- !u!212 &6326051614654604767 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 8038983641871646695, guid: 0990c291c18b9794283927392774cf49, type: 3}
-  m_PrefabInstance: {fileID: 6326051614654604765}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &6326051614654604768 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 6329160246363805067, guid: 0990c291c18b9794283927392774cf49, type: 3}
-  m_PrefabInstance: {fileID: 6326051614654604765}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

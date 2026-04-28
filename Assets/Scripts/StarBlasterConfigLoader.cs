@@ -12,6 +12,10 @@ public class StarBlasterConfigLoader : MonoBehaviour
 
     public event System.Action<StarBlasterOptions> OnConfigLoaded;
 
+    [SerializeField] private bool debugConfigLogs = true;
+
+    public bool DebugConfigLogs => debugConfigLogs; 
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -72,6 +76,7 @@ public class StarBlasterConfigLoader : MonoBehaviour
     public void ApplyDefaultConfig()
     {
         Options = new StarBlasterOptions();
+        SpriteLoader.ClearCache();
         OnConfigLoaded?.Invoke(Options);
     }
 

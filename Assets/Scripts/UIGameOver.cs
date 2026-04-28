@@ -14,6 +14,17 @@ public class UIGameOver : MonoBehaviour
     
     void Start()
     {
-        scoreText.text = "FINAL SCORE\n" + scoreKeeper.GetScore();
+        string label = "FINAL SCORE";
+
+        StarBlasterOptions options = StarBlasterConfigLoader.Instance?.Options;
+
+        if (options?.texts != null && !string.IsNullOrWhiteSpace(options.texts.finalScoreLabel))
+        {
+            label = options.texts.finalScoreLabel;
+        }
+
+        int score = scoreKeeper != null ? scoreKeeper.GetScore() : 0;
+
+        scoreText.text = $"{label}\n{scoreKeeper.GetScore()}";
     }
 }

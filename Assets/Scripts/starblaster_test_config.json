@@ -1,42 +1,35 @@
 {
   "starBlasterOptions": {
-    "difficultyPreset": "medium",
+    "difficultyPreset": "hard",
+
     "texts": {
       "title": "PIZZA BLASTER",
-      "subtitle": "PROTECT THE PIZZA",
-      "startButton": "PLAY",
-      "quitButton": "EXIT",
-      "scoreLabel": "SCORE",
-      "healthLabel": "HP",
-      "gameOverTitle": "GAME OVER",
-      "gameOverSubtitle": "TRY AGAIN",
-      "finalScoreLabel": "FINAL SCORE",
-      "playAgainButton": "PLAY AGAIN",
-      "mainMenuButton": "MENU"
+      "subtitle": "SAVE THE FOOD",
+      "startButton": "GO NOW",
+      "quitButton": "ESCAPE",
+      "scoreLabel": "POINTS",
+      "gameOverTitle": "YOU FAILED",
+      "gameOverSubtitle": "TRY HARDER",
+      "finalScoreLabel": "TOTAL"
     },
+
     "colors": {
-      "primaryColor": "#A855F7",
-      "secondaryColor": "#111827",
-      "buttonColor": "#E9C8FF",
-      "buttonTextColor": "#6B46C1",
-      "uiTextColor": "#FFFFFF",
-      "healthBarColor": "#22C55E"
+      "primaryColor": "#FF0000",
+      "secondaryColor": "#00FF00",
+      "buttonColor": "#0000FF",
+      "buttonTextColor": "#FFFF00",
+      "uiTextColor": "#00FFFF",
+      "healthBarColor": "#FF00FF"
     },
+
     "background": {
-      "background": {
-	  "baseScrollSpeedY": 0.15,
-	  "topScrollSpeedY": 0.45
-	  }
+      "baseScrollSpeedY": 0.05,
+      "topScrollSpeedY": 1.5
     },
-    "gameplay": {
-      "player": {
-        "health": 80,
-        "moveSpeed": 14,
-        "fireRate": 0.12,
-        "damage": 20,
-        "projectileSpeed": 14,
-        "projectileLifetime": 4
-      }
+
+    "images": {
+      "playerImage": "https://png.pngtree.com/png-vector/20241211/ourmid/pngtree-authentic-italian-pizza-with-cheese-and-fresh-vegetable-toppings-png-image_14714611.png",
+      "basicEnemyImage": "https://www.pngall.com/wp-content/uploads/2/Pacman-PNG-Images.png"
     }
   }
 }

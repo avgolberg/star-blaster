@@ -155,6 +155,7 @@ GameObject:
   - component: {fileID: -5851966020454434547}
   - component: {fileID: -9140099057040652425}
   - component: {fileID: -3542536518030187060}
+  - component: {fileID: 4581532379234972484}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
@@ -268,4 +269,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Health
   health: 50
   hitParticles: {fileID: 2673410675893140656, guid: d994e8eec6313014aa1eb0936af33be0, type: 3}
+  isPlayer: 0
+  scoreValue: 50
   applyCameraShake: 0
+--- !u!114 &4581532379234972484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5351262375732161914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbeae683cf0c4d84da6a9dc6e3afd37f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RuntimeSpriteApplier
+  spriteType: 1

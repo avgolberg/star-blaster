@@ -68,7 +68,7 @@ public class Shooter : MonoBehaviour
             yield return new WaitForSecondsRealtime(waitTime);
         }
     }
-    
+
     public void ApplyConfig(float newProjectileSpeed, float newProjectileLifetime, float newBaseFireRate)
     {
         projectileSpeed = newProjectileSpeed;

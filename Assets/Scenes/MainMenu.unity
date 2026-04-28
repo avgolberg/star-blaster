@@ -184,17 +184,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f3b5edaa8e15454da72d5bc4d76225c, type: 3}
---- !u!114 &91057298 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6457507494882205729, guid: 8f3b5edaa8e15454da72d5bc4d76225c, type: 3}
-  m_PrefabInstance: {fileID: 64192669}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91be67c78ad5ad348901ccc08b5d1611, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
 --- !u!1001 &95848759
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -283,6 +272,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StarBlasterConfigLoader
   testJson: {fileID: 4900000, guid: 017dd886bd7354c45a9fe4b034da5a0b, type: 3}
   loadTestJsonOnStart: 1
+  debugConfigLogs: 1
 --- !u!4 &217478699
 Transform:
   m_ObjectHideFlags: 0
@@ -1607,36 +1597,19 @@ MonoBehaviour:
   configLoader: {fileID: 217478698}
   backgroundRenderer: {fileID: 1435807893}
   backgroundTopLayerRenderer: {fileID: 388673038}
-  playerRenderer: {fileID: 0}
-  basicEnemyRenderer: {fileID: 0}
-  fastEnemyRenderer: {fileID: 0}
-  tankEnemyRenderer: {fileID: 0}
-  playerProjectileRenderer: {fileID: 0}
-  enemyProjectileRenderer: {fileID: 0}
   playerController: {fileID: 0}
   playerShooter: {fileID: 0}
-  playerProjectileDamage: {fileID: 0}
-  baseBackgroundScroller: {fileID: 0}
-  topBackgroundScroller: {fileID: 0}
   cameraShake: {fileID: 0}
-  audioManager: {fileID: 91057298}
+  audioManager: {fileID: 0}
   titleText: {fileID: 1618037590}
   subtitleText: {fileID: 634031362}
   scoreLabelText: {fileID: 0}
-  healthLabelText: {fileID: 0}
   gameOverTitleText: {fileID: 0}
   gameOverSubtitleText: {fileID: 0}
   finalScoreLabelText: {fileID: 0}
-  startButtonText: {fileID: 1309064566}
-  playAgainButtonText: {fileID: 0}
-  mainMenuButtonText: {fileID: 0}
-  primaryColorImages: []
-  buttonColorImages:
-  - {fileID: 930960499}
-  - {fileID: 1908218760}
-  uiTextElements:
-  - {fileID: 1618037590}
-  - {fileID: 634031362}
+  buttons:
+  - {fileID: 930960498}
+  - {fileID: 1908218759}
   healthSlider: {fileID: 0}
 --- !u!4 &1975245185
 Transform:

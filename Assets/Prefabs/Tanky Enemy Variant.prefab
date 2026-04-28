@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: scoreValue
       value: 150
       objectReference: {fileID: 0}
+    - target: {fileID: 4581532379234972484, guid: c6437402fed5eca468c3dde154d35a70, type: 3}
+      propertyPath: spriteType
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5351262375732161914, guid: c6437402fed5eca468c3dde154d35a70, type: 3}
       propertyPath: m_Name
       value: Tanky Enemy Variant
